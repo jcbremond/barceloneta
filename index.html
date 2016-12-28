@@ -57,11 +57,15 @@
         <section>
           <section class="section">
             
-            <a href='#barceloneta' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='barceloneta'>Barceloneta</h1>
+            <a href='#barceloneta' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='barceloneta'>barceloneta</h1>
+
+<p><a href="https://img.shields.io/cocoapods/v/barceloneta.svg"><img src="https://img.shields.io/cocoapods/v/barceloneta.svg" alt="CocoaPods Compatible"></a></p>
+
+<p>The right way to increment/decrement values</p>
 
 <p><img src="https://raw.githubusercontent.com/arn00s/barceloneta/master/img/barceloneta.gif" alt=""></p>
 
-<p>Barceloneta is the right way to increment/decrement values with a simple gesture on iOS</p>
+<p>barceloneta is the right way to increment/decrement values with a simple gesture on iOS</p>
 <a href='#features' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='features'>Features</h2>
 
 <ul>
@@ -77,27 +81,35 @@
 
 <ul>
 <li>Autolayout</li>
-<li>iOS 8.0+</li>
-<li>Swift 3</li>
-<li>Xcode 7.0 or higher</li>
+<li>iOS 9.0+</li>
+<li>Swift 3.0</li>
+<li>Xcode 8.0 or higher</li>
 </ul>
 <a href='#communication' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='communication'>Communication</h2>
 
 <ul>
-<li>If you <strong>need help</strong>, use <a href="http://stackoverflow.com/questions/tagged/Barceloneta">Stack Overflow</a>. (Tag &lsquo;Barceloneta&rsquo;)</li>
-<li>If you&rsquo;d like to <strong>ask a general question</strong>, use <a href="http://stackoverflow.com/questions/tagged/Barceloneta">Stack Overflow</a>.</li>
+<li>If you <strong>need help</strong>, use <a href="http://stackoverflow.com/questions/tagged/barceloneta">Stack Overflow</a>. (Tag &lsquo;Barceloneta&rsquo;)</li>
+<li>If you&rsquo;d like to <strong>ask a general question</strong>, use <a href="http://stackoverflow.com/questions/tagged/barceloneta">Stack Overflow</a>.</li>
 <li>If you <strong>found a bug</strong>, open an issue.</li>
 <li>If you <strong>have a feature request</strong>, open an issue.</li>
 <li>If you <strong>want to contribute</strong>, submit a pull request.</li>
 <li>If you <strong>use the control</strong>, contact me to mention your app on this page.</li>
 </ul>
 <a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
-<a href='#cocoapods-carthage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='cocoapods-carthage'>CocoaPods/Carthage</h3>
+<a href='#cocoapods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='cocoapods'>CocoaPods</h3>
 
-<p>Support for CocoaPods/Carthage is coming soon</p>
+<p>CariocaMenu is now available on <a href="http://cocoapods.org">CocoaPods</a>. 
+Simply add the following to your project Podfile, and you&rsquo;ll be good to go.</p>
+<pre class="highlight ruby"><code><span class="n">use_frameworks!</span>
+
+<span class="n">pod</span> <span class="s1">'barceloneta'</span>
+</code></pre>
+<a href='#carthage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='carthage'>Carthage</h3>
+
+<p>Coming soon</p>
 <a href='#manually' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='manually'>Manually</h3>
 
-<p>You can integrate <code>Barceloneta</code> into your project manually.</p>
+<p>You can integrate <code>barceloneta</code> into your project manually.</p>
 <a href='#source-file' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='source-file'>Source File</h4>
 
 <p>Simply add the <code>Library/Barceloneta.swift</code> source file directly into your project.</p>
@@ -143,10 +155,10 @@ Keep in mind that the goal of this library is only to manage the incrementation 
 <pre class="highlight swift"><code><span class="n">barcelonetaView</span><span class="o">.</span><span class="n">minimumValue</span> <span class="o">=</span> <span class="mf">0.0</span>
 <span class="n">barcelonetaView</span><span class="o">.</span><span class="n">maximumValue</span> <span class="o">=</span> <span class="mf">50.0</span>
 </code></pre>
-<a href='#vertical-limit' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='vertical-limit'>Vertical limit</h4>
+<a href='#dragging-limit' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='dragging-limit'>Dragging limit</h4>
 
 <p>This value defines the dragging limit of your <code>barceloneta</code> object. If the user draggs the view higher than this limit, a rubber effect will apply. The view will go up/down slower than your finger.</p>
-<pre class="highlight swift"><code><span class="n">barcelonetaView</span><span class="o">.</span><span class="n">verticalLimit</span> <span class="o">=</span> <span class="mf">50.0</span>
+<pre class="highlight swift"><code><span class="n">barcelonetaView</span><span class="o">.</span><span class="n">draggingLimit</span> <span class="o">=</span> <span class="mf">50.0</span>
 </code></pre>
 <a href='#timer-settings' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='timer-settings'>Timer Settings</h4>
 
@@ -155,7 +167,7 @@ It is required to have at least an object in the timer setting.</p>
 
 <p>Depending on the percentage, the matching settings will be applied.</p>
 
-<p>A deplacement of 100% corresponds to the verticalLimit.</p>
+<p>A deplacement of 100% corresponds to the draggingLimit.</p>
 <pre class="highlight swift"><code><span class="p">(</span><span class="nv">range</span><span class="p">:</span><span class="mi">0</span><span class="o">..&lt;</span><span class="mi">70</span><span class="p">,</span><span class="nv">timer</span><span class="p">:</span><span class="mf">0.3</span><span class="p">,</span><span class="nv">increment</span><span class="p">:</span><span class="mf">1.0</span><span class="p">)</span>
 </code></pre>
 
@@ -164,6 +176,11 @@ It is required to have at least an object in the timer setting.</p>
 <p>Between <code>0</code> and <code>70%</code>, the timer interval for incrementation is <code>0.3 seconds</code>, and the value incremented is <code>1.0</code>.</p>
 
 <p><img src="https://raw.githubusercontent.com/arn00s/barceloneta/master/img/barceloneta_explanation.png" alt=""></p>
+<a href='#crash-when-running-the-app' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='crash-when-running-the-app'>Crash when running the app ?</h4>
+
+<p>If you installed <code>barceloneta</code> via CocoaPods and use it with Storyboard/xib, you may need to set the module :</p>
+
+<p><img src="https://raw.githubusercontent.com/arn00s/barceloneta/master/img/custom-module-storyboard.png" alt=""></p>
 <a href='#todo' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='todo'>TODO</h2>
 
 <ul>
@@ -205,7 +222,7 @@ The fastest zero-tap iOS menu</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="https://twitter.com/arnaud_momo" target="_blank" rel="external">Arnaud Schloune</a>. All rights reserved. (Last updated: 2016-12-23)</p>
+          <p>&copy; 2016 <a class="link" href="https://twitter.com/arnaud_momo" target="_blank" rel="external">Arnaud Schloune</a>. All rights reserved. (Last updated: 2016-12-28)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
